@@ -54,7 +54,9 @@ button:hover::before, button:hover::after {
 button:hover {
   box-shadow: inset 0px 0px 25px #1479EA;
 }
-
+header{
+    color:#0dc1ff;
+}
 
 
 
