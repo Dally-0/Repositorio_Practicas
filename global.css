@@ -1,7 +1,8 @@
 @import "tailwindcss";
 body {
     background-color: #0dc1ff;
-    font-family: 'Roboto Mono', monospace; 
+    font-family: 'Roboto Mono', monospace;
+    overflow-x: hidden; 
 }
 
 /* From Uiverse.io by Navarog21 */ 
