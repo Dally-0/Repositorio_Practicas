@@ -45,6 +45,7 @@
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 items-center m-5">
+            <!-- Ejercicio 1 HTML-->
             <div class="justify-center text-center m-5 border-2 rounded-2xl p-5">
                 <h1 class="font-bold">Ejercicio 1</h1>
                 <h2>1. Desarrolle una función en JavaScript que permita leer una temperatura
@@ -60,6 +61,9 @@
                 </div>
 
             </div>
+
+
+            <!-- Ejercicio 2 HTML-->
             <div class="justify-center text-center m-5 border-2 rounded-2xl p-5">
                 <h1 class="font-bold">Ejercicio 2</h1>
                 <h2>
@@ -78,6 +82,9 @@
                     class="m-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-2 rounded">
                     Empezar FizzBuzz</button>
             </div>
+
+
+            <!-- Ejercicio 3 HTML-->
             <div class="justify-center text-center m-5 border-2 rounded-2xl p-5">
                 <h1 class="font-bold">Ejercicio 3</h1>
                 <h2>
@@ -92,6 +99,9 @@
                 </div>
                 <p id="p3">La Fecha se motrara aqui</p>
             </div>
+
+
+            <!-- Ejercicio 4 HTML-->
             <div class="justify-center text-center m-5 border-2 rounded-2xl p-5">
                 <h1 class="font-bold">Ejercicio 4</h1>
                 <h2>
@@ -112,6 +122,11 @@
                 <p id="p4Promedio">Promedio: </p>
                 <p id="p4Descuento">Descuento: </p>
             </div>
+
+
+
+
+            <!-- Ejercicio 5 HTML-->
             <div class="justify-center text-center m-5 border-2 rounded-2xl p-5">
                 <h1 class="font-bold">Ejercicio 5</h1>
                 <h2>
@@ -151,7 +166,7 @@
 
             </div>
 
-
+            <!-- Evidencia SoloLearn  HTML-->
             <div class="justify-center text-center m-5 border-2 rounded-2xl p-5">
                 <p class="font-bold">Evidencia de haber completado el curso de Introducción a JavaScript en Solo Learn: </p>
                 <img class="p-1" src="CertificadoSoloLearn.jpg" alt="Certificado SoloLearn" >
@@ -223,9 +238,14 @@
 
         //Ejercicio 3
         function mostrarFechaActual() {
-            let fechaActual = document.getElementById("p3")
-            let fecha = new Date().toLocaleDateString();
-            fechaActual.textContent = "La fecha actual es: " + fecha;
+            let p3 = document.getElementById("p3");
+            let fecha = new Date();
+            let opciones = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+
+            let fechaTexto = fecha.toLocaleDateString('es-ES', opciones);
+
+            p3.textContent = "La fecha actual es: " + fechaTexto;
+
         }
 
         //Ejercicio 4
