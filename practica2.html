@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 2</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="bg-black text-blue-200 p-4 shadow-lg sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                DALLY
+            </div>
+            <nav>
+                <a href="index.html" class="mx-2 hover:text-blue-400 transition duration-300">Práctica 1</a>
+                <a href="practica2.html" class="mx-2 hover:text-blue-400 transition duration-300">Práctica 2</a>
+
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="text-center m-10 border-2">
+            <h1 class="p-1 text-5xl font-bold">
+                TECNOLOGIA WEB 1
+            </h1>
+
+            <h2 class="text-3xl p-1">
+                "PRACTICA 2: EJERCICIOS JAVASCRIPT"
+            </h2>
+
+            <p class="text-lg p-1">
+                Estudiante:David Willy Cruz Huanca
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center m-5">
+            <div class="justify-center text-center m-5 border-2 rounded-2xl p-5">
+                <h1 class="font-bold">Ejercicio 1</h1>
+                <h2>1. Desarrolle una función en JavaScript que permita leer una temperatura
+                    en grados Celsius y devuelva el clima según la siguiente tabla:
+                </h2>
+                <div class="">
+                    <label for="first_name" class="m-2 block mb-2.5 text-sm font-medium text-heading">Ingrese su
+                        temperatura</label>
+                    <input type="text" id="temperaturaIngresada" class="bg-neutral-secondary-medium border-2"
+                        placeholder="0" />
+                    <button onclick="leerTemperatura()">Medir Temperatura</button>
+                    <p id="p1Temperatura">Indique su temperatura</p>
+                </div>
+
+            </div>
+            <div class="justify-center text-center m-5 border-2 rounded-2xl p-5">
+                <h1 class="font-bold">Ejercicio 2</h1>
+                <h2>
+                    2. Desarrolle una función en JavaScript que muestre el algoritmo Fizz-Buzz
+                    (Este algoritmo se basa en que se debe hacer un contador desde el
+                    número 1 al número 100, en orden correlativo, pero cada vez que un
+                    número sea múltiplo de 3, debe decir Fizz y cada vez que un número sea
+                    múltiplo de 5, debe decir Buzz, en el caso que un número sea múltiplo de
+                    3 y 5, debe decir FizzBuzz, si el número no es múltiplo de 3 o 5 no
+                    mostrara nada)
+                </h2>
+                <div class="items-center">
+                    <textarea id="txtA1" class="border bg-amber-50" name="uwu" id=""></textarea>
+                </div>
+                <button id="btn2" onclick="FizzBuzz()"
+                    class="m-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-2 rounded">
+                    Empezar FizzBuzz</button>
+            </div>
+            <div class="justify-center text-center m-5 border-2 rounded-2xl p-5">
+                <h1 class="font-bold">Ejercicio 3</h1>
+                <h2>
+                    Desarrolle una función en JavaScript que muestre la fecha actual.
+                    Ejemplo: Jueves, 25 de Diciembre del 2025
+                </h2>
+                <div>
+                    <button id="btn3" onclick="mostrarFechaActual()"
+                        class="m-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-2 rounded">
+                        Mostrat Fecha actual
+                    </button>
+                </div>
+                <p id="p3">La Fecha se motrara aqui</p>
+            </div>
+            <div class="justify-center text-center m-5 border-2 rounded-2xl p-5">
+                <h1 class="font-bold">Ejercicio 4</h1>
+                <h2>
+                    4. Crear un objeto lugarTuristico con propiedades: nombre, ciudad,
+                    precioEntrada, horario, calificaciones (array).
+                    <br>• Añade un método promedioCalificaciones() que retorne el promedio.
+                    <br>• Añade un método aplicarDescuento(porcentaje) que actualice
+                    precioEntrada.
+                </h2>
+
+
+                <p id="p4Datos">Datos usados</p>
+                <div>
+                    <button onclick="ejecutarMetodos()">
+                        Promedio y descuento
+                    </button>
+                </div>
+                <p id="p4Promedio">Promedio: </p>
+                <p id="p4Descuento">Descuento: </p>
+            </div>
+            <div class="justify-center text-center m-5 border-2 rounded-2xl p-5">
+                <h1 class="font-bold">Ejercicio 5</h1>
+                <h2>
+                    5. Crear una clase Hotel con: nombre, ciudad, habitacionesDisponibles.
+                    <br>• Método reservar(cantidad) (resta disponibilidad, no permite
+                    negativos).
+                    <br>• Método liberar(cantidad) (suma disponibilidad).
+                    <br>• Método info() (string con datos del hotel).
+                </h2>
+
+                <p id="p5Datos" class="m-5"> Datos Objetos</p>
+
+                <div>
+                    <label id="lblReservar" class="m-2 block mb-2.5 text-sm font-medium text-heading">
+                        Ingrese la cantidad a reservar
+                    </label>
+
+                    <input type="number" id="cantidadReservar" class="bg-neutral-secondary-medium border-2"
+                        placeholder="0" min="0" />
+                    <button onclick="Reservar()" id="btnReserva">
+                        Reservar
+                    </button>
+                </div>
+
+                <div>
+                    <label id="lblLiberar" class="m-2 block mb-2.5 text-sm font-medium text-heading">
+                        Ingrese la cantidad a liberar
+                    </label>
+
+                    <input type="number" id="cantidadLiberar" class="bg-neutral-secondary-medium border-2"
+                        placeholder="0" min="0" />
+                    <button onclick="Liberar()" id="btnLiberar">
+                        Liberar
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+    </main>
+    <footer>
+        <div class="container mx-auto text-center pb-5 m-5 p-5">
+            <p class="mb-2 text-sm">
+                &copy; <span id="currentYear"></span> David Willy Cruz Huanca. Todos los derechos reservados.
+            </p>
+            <p class="text-xs">
+                Materia: Tecnología Web I | Correo institucional: <a href="mailto:cb.david.cruz.h@upds.net.bo"
+                    class="text-dark-400 font-bold hover:text-blue-200">cb.david.cruz.h@upds.net.bo</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        //Ejercicio 1
+        function leerTemperatura() {
+            let p1 = document.getElementById("p1Temperatura");
+            let temperatura = parseInt(document.getElementById("temperaturaIngresada").value);
+            if (isNaN(temperatura)) {
+                salida.textContent = "Por favor, ingresa un número válido";
+                return;
+            }
+            switch (true) {
+                case (temperatura >= -10 && temperatura <= 15):
+                    p1.textContent = "Frio";
+                    break;
+                case (temperatura >= 16 && temperatura <= 25):
+                    p1.textContent = "Templado";
+                    break;
+                case (temperatura >= -26 && temperatura <= 40):
+                    p1.textContent = "Calor";
+                    break;
+                default:
+                    p1.textContent = "temperatura no validada"
+                    break;
+            }
+        }
+
+        //Ejercicio2
+        function FizzBuzz() {
+            let txtA1 = document.getElementById("txtA1");
+            let resultado = "";
+            for (let i = 1; i <= 100; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    resultado += i + " - FizzBuzz \n";
+                }
+                else if (i % 3 === 0) {
+                    resultado += i + " - Fizz \n";
+                }
+                else if (i % 5 === 0) {
+                    resultado += i + " - Buzz \n";
+                }
+            }
+            txtA1.value = resultado;
+        }
+
+        //Ejercicio 3
+        function mostrarFechaActual() {
+            let fechaActual = document.getElementById("p3")
+            let fecha = new Date().toLocaleDateString();
+            fechaActual.textContent = "La fecha actual es: " + fecha;
+        }
+
+        //Ejercicio 4
+
+        let p4Promedio = document.getElementById("p4Promedio")
+        let p4Descuento = document.getElementById("p4Descuento")
+        let p4Datos = document.getElementById("p4Datos")
+        let descuento = false;
+        let lugarTuristico = {
+            nombre: "Uyuni",
+            ciudad: "Potosí",
+            precioEntrada: 50,
+            horario: "De 7:00 a 19:00",
+            calificaciones: [53, 80, 90],
+
+            promedioCalificaciones: function () {
+                promedio = (lugarTuristico.calificaciones[1] + lugarTuristico.calificaciones[0] + lugarTuristico.calificaciones[2]) / 3;
+                p4Promedio.textContent = (promedio < 51) ? "Promedio: reprobado" : "Promedio: aprobado";
+                descuento = (promedio < 51) ? false : true;
+            },
+
+            aplicarDescuento: function () {
+                p4Descuento.textContent = (descuento === true) ? "Se aplica descuento" : "No se aplica descuento"
+                lugarTuristico.precioEntrada = (descuento === true) ? (lugarTuristico.precioEntrada * 0.5) : lugarTuristico.precioEntrada;
+            }
+        };
+        function ejecutarMetodos() {
+            lugarTuristico.promedioCalificaciones();
+            lugarTuristico.aplicarDescuento();
+            actualizarPantalla();
+        }
+        function actualizarPantalla() {
+            p4Datos.innerHTML = `
+            <strong>Datos del objeto creado:</strong> <br>
+            <strong>Lugar:</strong> ${lugarTuristico.nombre} <br>
+            <strong>Ciudad:</strong> ${lugarTuristico.ciudad} <br>
+            <strong>Precio:</strong> ${lugarTuristico.precioEntrada} <br>
+            <strong>Horario:</strong> ${lugarTuristico.horario} <br>
+            <strong>Calificaciones:</strong> ${lugarTuristico.calificaciones.join(", ")}
+            `;
+        }
+        actualizarPantalla();
+
+
+        //ejercicio5
+        
+        
+        let hotel = {
+            nombre: "Hotel Azulado",
+            ciudad: "Uyuni",
+            habitacionesDisponibles: 50
+        }
+        function info(){
+            p5Datos.innerHTML = `
+            <strong>Datos del objeto creado:</strong> <br>
+            <strong>Nombre:</strong> ${hotel.nombre} <br>
+            <strong>Ciudad:</strong> ${hotel.ciudad} <br>
+            <strong>Habitaciones Disponibles:</strong> ${hotel.habitacionesDisponibles} <br>
+            `;
+        }
+        info();
+        function Reservar(){
+            let cantidadReservar = parseInt(document.getElementById("cantidadReservar").value);
+            if (cantidadReservar<0 ){
+                alert("Error: ingrese una cantidad positiva, no negativo, no mayor a 50")
+            }
+            else if (cantidadReservar<=hotel.habitacionesDisponibles) {
+                hotel.habitacionesDisponibles=hotel.habitacionesDisponibles- cantidadReservar;
+                alert("Exito: Reserva realizada")
+            }
+            else{
+                alert("Cantidad de habitacion no disponibles");
+            }
+            info();
+        }
+        function Liberar(){
+            let cantidadLiberar = parseInt(document.getElementById("cantidadLiberar").value) ;
+            if (cantidadLiberar<0){
+                alert("Error: Ingrese una cantidad positiva")
+            }
+            else if (hotel.habitacionesDisponibles===50){
+                alert("Error: Todas la habitaciones ya estaban liberadas previamente")
+            } else if (cantidadLiberar+hotel.habitacionesDisponibles>50){
+                alert("Error: Cantidad de habitaciones a liberar superan el maximo de habitacones del hotel (50)")
+            }
+            else{
+                hotel.habitacionesDisponibles= hotel.habitacionesDisponibles+cantidadLiberar;
+                alert("Exito: Habitaciones liberadas")
+            }   
+            info();
+        }
+
+
+    </script>
+</body>
+
+</html>
