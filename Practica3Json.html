@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicas_DavidCruz</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="bg-black text-blue-200 p-4 shadow-lg sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                DALLY
+            </div>
+            <nav>
+                <a href="index.html" class="mx-2 hover:text-blue-400 transition duration-300">Práctica 1</a>
+                <a href="practica2.html" class="mx-2 hover:text-blue-400 transition duration-300">Práctica 2</a>
+                <a href="Practica3Json.html" class="mx-2 hover:text-blue-400 transition duration-300">Práctica 3</a>
+
+            </nav>
+        </div>
+    </header>
+    <main>
+            <header class="text-center mb-16" data-aos="fade-down">
+        <h1 class="text-5xl font-extrabold text-slate-800 mb-4 tracking-tight">
+            Maravillas de <span class="text-blue-600">Uyuni</span>
+        </h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Explora los datos geográficos y puntos más emblemáticos del salar más grande del mundo.
+        </p>
+    </header>
+
+    <div id="lugares-container" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </div>
+
+    </main>
+    <footer>
+        <div class="container mx-auto text-center pb-5 m-5 p-5">
+            <p class="mb-2 text-sm">
+                &copy; <span id="currentYear"></span> David Willy Cruz Huanca. Todos los derechos reservados.
+            </p>
+            <p class="text-xs">
+                Materia: Tecnología Web I | Correo institucional: <a href="mailto:cb.david.cruz.h@upds.net.bo"
+                    class="text-dark-400 font-bold hover:text-blue-200">cb.david.cruz.h@upds.net.bo</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+    async function cargarDatos() {
+        try {
+            const respuesta = await fetch('datos.json');
+            if (!respuesta.ok) throw new Error('Error al cargar JSON');
+            
+            const datos = await respuesta.json();
+            const contenedor = document.getElementById('lugares-container');
+            contenedor.innerHTML = '';
+
+            datos.atractivos_turisticos.forEach((lugar, index) => {
+                const card = document.createElement('div');
+                
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', (index * 100).toString());
+                
+                // Mantenemos glass-card pero aseguramos que el contenido sea blanco
+                card.className = "glass-card p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 group text-white";
+
+                let detallesHTML = "";
+                for (const [clave, valor] of Object.entries(lugar.datos_geograficos)) {
+                    const titulo = clave.replace(/_/g, ' ');
+                    if (typeof valor === 'object') {
+                        detallesHTML += `
+                            <div class="mt-4 p-3 bg-white/10 rounded-xl border border-white/20">
+                                <p class="text-xs font-bold uppercase mb-1 text-blue-200">Coordenadas</p>
+                                <p class="text-sm text-white font-mono">${valor.latitud}, ${valor.longitud}</p>
+                            </div>`;
+                    } else {
+                        detallesHTML += `
+                            <div class="mb-3">
+                                <span class="text-xs font-semibold uppercase text-blue-100/70 block">${titulo}</span>
+                                <span class="text-white font-medium">${valor}</span>
+                            </div>`;
+                    }
+                }
+
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-3 py-1 bg-white/20 text-white text-xs font-bold rounded-full uppercase tracking-wider">
+                            ${lugar.tipo}
+                        </span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-4 group-hover:text-blue-200 transition-colors">
+                        ${lugar.nombre}
+                    </h2>
+                    <div class="space-y-2">
+                        ${detallesHTML}
+                    </div>
+                `;
+                
+                contenedor.appendChild(card);
+            });
+        } catch (error) {
+            console.error(error);
+            document.getElementById('lugares-container').innerHTML = `
+                <div class="col-span-full text-center p-10 bg-red-900/50 rounded-2xl text-white border border-red-500">
+                    Error al cargar los datos. Asegúrate de usar un servidor local.
+                </div>`;
+        }
+    }
+
+    cargarDatos();
+</script>
+</body>
+
+</html>
