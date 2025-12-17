@@ -1,0 +1,83 @@
+{
+  "region": "Salar de Uyuni",
+  "pais": "Bolivia",
+  "departamento": "Potosí",
+  "descripcion_general": "El salar de superficie continua y alta más grande del mundo.",
+  "atractivos_turisticos": [
+    {
+      "nombre": "Salar de Uyuni (Cuerpo Central)",
+      "tipo": "Desierto de sal",
+      "datos_geograficos": {
+        "altitud_msnm": 3663,
+        "superficie_km2": 10582,
+        "composicion_quimica": "Litio, Potasio, Magnesio, Boro",
+        "coordenadas": {
+          "latitud": -20.1338,
+          "longitud": -67.4891
+        }
+      }
+    },
+    {
+      "nombre": "Isla Incahuasi",
+      "tipo": "Afloramiento rocoso / Isla volcánica",
+      "datos_geograficos": {
+        "caracteristica": "Formada sobre restos de un volcán antiguo y restos de corales",
+        "flora_destacada": "Cactus gigantes (Trichocereus pasacana)",
+        "coordenadas": {
+          "latitud": -20.2427,
+          "longitud": -67.6247
+        }
+      }
+    },
+    {
+      "nombre": "Reserva Nacional de Fauna Andina Eduardo Avaroa",
+      "tipo": "Área protegida",
+      "datos_geograficos": {
+        "altitud_promedio_msnm": 4300,
+        "clima": "Estepa fría / Árido",
+        "puntos_clave": "Laguna Colorada, Laguna Verde, Árbol de Piedra",
+        "coordenadas": {
+          "latitud": -20.2427,
+          "longitud": -67.6247
+        }
+      }
+    },
+    {
+      "nombre": "Laguna Colorada",
+      "tipo": "Laguna salada de sedimentos",
+      "datos_geograficos": {
+        "coloracion": "Rojo pigmentado por algas dunaliella salina",
+        "fauna": "Flamencos de James, Andinos y Chilenos",
+        "coordenadas": {
+          "latitud": -22.1983,
+          "longitud": -67.7811
+        }
+      }
+    },
+    {
+      "nombre": "Geiseres Sol de Mañana",
+      "tipo": "Campo geotérmico",
+      "datos_geograficos": {
+        "altitud_msnm": 4850,
+        "fenomenos": "Fumarolas, pozos de lodo hirviente",
+        "actividad": "Volcánica latente",
+        "coordenadas": {
+          "latitud": -22.4358,
+          "longitud": -67.7547
+        }
+      }
+    },
+    {
+      "nombre": "Cementerio de Trenes",
+      "tipo": "Sitio histórico / Industrial",
+      "datos_geograficos": {
+        "distancia_ciudad_uyuni_km": 3,
+        "descripcion": "Restos de locomotoras de finales del siglo XIX",
+        "coordenadas": {
+          "latitud": -20.4819,
+          "longitud": -66.8361
+        }
+      }
+    }
+  ]
+}
